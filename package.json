@@ -1,0 +1,8 @@
+{
+  "name": "gst-smart-library-management-system",
+  "version": "1.0.0",
+  "description": "GoMyCode checkpoint - Low Level Design: Object-Oriented Design",
+  "main": "tests.js",
+  "scripts": { "test": "node tests.js" },
+  "license": "MIT"
+}
