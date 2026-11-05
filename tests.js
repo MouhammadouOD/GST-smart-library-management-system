@@ -4,7 +4,7 @@ const { UserFactory } = require('./userFactory');
 const { Book } = require('./book');
 const { LibrarySystem } = require('./librarySystem');
 
-const TOTAL_TESTS = 12;
+const TOTAL_TESTS = 13;
 let passed = 0;
 function test(name, fn) {
   LibrarySystem.resetInstance();
@@ -43,6 +43,11 @@ console.log('LibrarySystem (Singleton)');
 
   test('le constructeur refuse une 2e instance tant que la 1ère existe', () => {
     LibrarySystem.getInstance();
+    assert.throws(() => new LibrarySystem());
+  });
+
+  test('deux `new LibrarySystem()` directs (sans getInstance) lèvent une erreur au 2e appel', () => {
+    new LibrarySystem();
     assert.throws(() => new LibrarySystem());
   });
 }

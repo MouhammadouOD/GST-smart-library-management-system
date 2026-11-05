@@ -13,6 +13,7 @@ class LibrarySystem {
     if (instance) {
       throw new Error('LibrarySystem is a singleton, use getInstance() instead');
     }
+    instance = this;
     this.users = [];
     this.books = [];
     this.transactions = [];
